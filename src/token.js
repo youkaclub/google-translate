@@ -113,7 +113,7 @@ function updateTKK() {
 }
 
 // eslint-disable-next-line require-jsdoc
-async function generate(text) {
+async function token(text) {
   try {
     await updateTKK();
 
@@ -125,4 +125,4 @@ async function generate(text) {
   }
 }
 
-module.exports.generate = generate;
+module.exports = token;

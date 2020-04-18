@@ -1,13 +1,19 @@
 {
   "name": "@youka/google-translate",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "nodejs client for google-translate",
   "main": "src/index.js",
   "repository": "https://github.com/youkaclub/google-translate.git",
+  "scripts": {
+    "test": "jest"
+  },
   "dependencies": {
     "request": "^2.88.2",
     "request-promise": "^4.2.5"
   },
   "author": "Sankarsan Kampa (a.k.a. k3rn31p4nic)",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "jest": "^25.3.0"
+  }
 }

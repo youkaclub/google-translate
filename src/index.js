@@ -1,5 +1,5 @@
 const languages = require("./languages");
-const tokenGenerator = require("./tokenGenerator");
+const tokenGenerator = require("./token");
 const querystring = require("querystring");
 const rp = require("request-promise");
 
@@ -37,7 +37,7 @@ async function translate(text, options) {
     options.to = languages.getISOCode(options.to);
 
     // Generate Google Translate token for the text to be translated.
-    let token = await tokenGenerator.generate(text);
+    let token = await tokenGenerator(text);
 
     // URL & query string required by Google Translate.
     let baseUrl = "https://translate.google.com/translate_a/single";
@@ -142,5 +142,12 @@ async function translate(text, options) {
   }
 }
 
-module.exports = translate;
-module.exports.languages = languages;
+async function language(text) {
+  const res = await translate(text);
+  return res.from.language.iso;
+}
+
+module.exports = {
+  translate,
+  language,
+};
