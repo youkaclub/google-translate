@@ -38,7 +38,6 @@ async function translate(text, options) {
 
     // Generate Google Translate token for the text to be translated.
     let token = await tokenGenerator.generate(text);
-    console.log("token", token);
 
     // URL & query string required by Google Translate.
     let baseUrl = "https://translate.google.com/translate_a/single";
@@ -63,7 +62,6 @@ async function translate(text, options) {
 
     let requestOptions;
     // If request URL is greater than 2048 characters, use POST method.
-    console.log(url.length);
     if (url.length > 2048) {
       delete data.q;
       requestOptions = {
