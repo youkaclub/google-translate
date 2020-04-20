@@ -1,6 +1,6 @@
 {
   "name": "@youka/google-translate",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "nodejs client for google-translate",
   "main": "src/index.js",
   "repository": "https://github.com/youkaclub/google-translate.git",
