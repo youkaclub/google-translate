@@ -144,7 +144,7 @@ async function translate(text, options) {
 
 async function language(text) {
   const res = await translate(text);
-  return res.from.language.iso;
+  return res.from.language.iso.split("-")[0];
 }
 
 module.exports = {
